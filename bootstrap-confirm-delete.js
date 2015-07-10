@@ -37,9 +37,16 @@
 
             if ( null !== settings.callback )
             {
-                $( '#bootstrap-confirm-dialog-delete-btn' ).attr( 'data-dismiss', 'modal');
+                $( '#bootstrap-confirm-dialog-delete-btn' ).attr( 'data-dismiss', 'modal' );
 
-                $( 'a#bootstrap-confirm-dialog-delete-btn' ).on( 'click', settings.callback );
+                if ( $.isFunction( settings.callback ) )
+                {
+                    $( 'a#bootstrap-confirm-dialog-delete-btn' ).on( 'click', { originalObject: this }, settings.callback );
+                }
+                else
+                {
+                    console.log( settings.callback + ' is not a valid callback' );
+                }
             }
             else if ( '' !== event.currentTarget.href )
             {
