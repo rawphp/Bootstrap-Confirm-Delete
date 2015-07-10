@@ -2,3 +2,4 @@
 
 Bootstrap confirm delete modal dialog jquery plugin
 
+## Examples
