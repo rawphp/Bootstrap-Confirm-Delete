@@ -53,11 +53,11 @@
                 {
                     var deleteBtn = $( 'a#bootstrap-confirm-dialog-delete-btn' );
 
-                    deleteBtn.on( 'click', { originalObject: this }, plugin.settings.callback );
+                    deleteBtn.on( 'click', { originalObject: $( this ) }, plugin.settings.callback );
 
                     if ( null !== plugin.settings.delete_callback )
                     {
-                        deleteBtn.on( 'click', { originalObject: this }, plugin.settings.delete_callback );
+                        deleteBtn.on( 'click', { originalObject: $( this ) }, plugin.settings.delete_callback );
                     }
                 }
                 else
@@ -72,7 +72,7 @@
 
             if ( null !== plugin.settings.cancel_callback )
             {
-                $( '#bootstrap-confirm-dialog-cancel-delete-btn' ).on( 'click', { originalObject: this }, plugin.settings.cancel_callback );
+                $( '#bootstrap-confirm-dialog-cancel-delete-btn' ).on( 'click', { originalObject: $( this ) }, plugin.settings.cancel_callback );
             }
         };
     };
