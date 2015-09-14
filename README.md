@@ -29,7 +29,7 @@ on any links or buttons that have the 'delete' class on them.
 ```
 
 ```html
-<a href="server.php" class="delete" data_type="post">Delete</a>
+<a href="server.php" class="delete" data-type="post">Delete</a>
 ```
 
 Initialise the plugin either in <script></script> tags on the html page or in an external .js script. 
@@ -41,7 +41,7 @@ $( document ).ready( function( )
 } );
 ```
 
-Notice the 'data_type' attribute on the link. The plugin will use this attribute if set to show a custom delete message. For example,
+Notice the 'data-type' attribute on the link. The plugin will use this attribute if set to show a custom delete message. For example,
 
 Heading:    'Delete Post'
 
@@ -93,12 +93,18 @@ Used if heading & message are not provided
 Will fire if responding to a button click that has no href attribute.
 
 Use this callback to do any deletions from a button click.
+Parameters:
+* data (data.originalObject contains the originally clicked object)
 
 ### delete_callback
 Will fire when the delete button is clicked and a handler is provided.
+Parameters:
+* data (data.originalObject contains the originally clicked object)
 
 ### cancel_callback
 Will fire when the cancel button is clicked and a handler is provided.
+Parameters:
+* data (data.originalObject contains the originally clicked object)
 
 
 ## License
