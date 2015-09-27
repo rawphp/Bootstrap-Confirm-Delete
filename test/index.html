@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+/*
+ * Bootstrap Confirm Delete
+ *
+ * Author: Tom Kaczocha <tom@rawphp.org>
+ *
+ * Licensed under the MIT license
+ */
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Tom Kaczocha">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bootstrap Confirm Delete Plugin Test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-confirm-delete.css">
+
+    <!-- Custom styles for this template -->
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .content {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bootstrap Confirm Delete Plugin Test</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <!--<li><a href="#about">About</a></li>-->
+                <!--<li><a href="#contact">Contact</a></li>-->
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container content">
+    <div class="row">
+        <table class="table table-responsive table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th>Name</th>
+                <th class="text-center">Remove</th>
+                <th>Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td class="text-left">John Smith</td>
+                <td><a href="#" class="delete-row-default"><span class="glyphicon glyphicon-remove"></span></a></td>
+                <td class="text-left">Delete row using <code>&lt;a href="#"&gt;&lt;/a&gt;</code> tag with the default settings</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="text-left">Sarah Jones</td>
+                <td><a href="#" class="delete-user-row-with-data-type" data-type="user"><span class="glyphicon glyphicon-remove"></span></a></td>
+                <td class="text-left">Delete row using <code>&lt;a href="#"&gt;&lt;/a&gt;</code> tag with <code>data-type</code> set to 'user'</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="text-left">Andy Fine</td>
+                <td><a href="#" class="delete-user-row-with-ajax-button" data-type="user"><span class="glyphicon glyphicon-remove"></span></a></td>
+                <td class="text-left">Delete row using <code>&lt;button&gt;</code> ajax call with <code>data-type</code> set to 'user'</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /.container -->
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap-confirm-delete.js"></script>
+<script src="test.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</body>
+</html>

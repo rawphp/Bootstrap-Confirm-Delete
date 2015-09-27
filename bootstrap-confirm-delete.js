@@ -48,6 +48,7 @@
             var deleteBtn = $( 'a#bootstrap-confirm-dialog-delete-btn' );
             var cancelBtn = $( 'a#bootstrap-confirm-dialog-cancel-delete-btn' );
             var hasCallback = false;
+
             if ( null !== plugin.settings.callback )
             {
                 if ( $.isFunction( plugin.settings.callback ) )
