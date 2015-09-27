@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-confirm-delete",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Bootstrap confirm delete modal dialog jquery plugin",
   "main": "bootstrap-confirm-dialog.js",
   "scripts": {

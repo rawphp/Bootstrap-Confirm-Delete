@@ -45,34 +45,42 @@
             $( '#bootstrap-confirm-dialog-text' ).html( plugin.settings.message );
             $( '#bootstrap-confirm-dialog' ).modal( 'toggle' );
 
+            var deleteBtn = $( 'a#bootstrap-confirm-dialog-delete-btn' );
+            var cancelBtn = $( 'a#bootstrap-confirm-dialog-cancel-delete-btn' );
+            var hasCallback = false;
+
             if ( null !== plugin.settings.callback )
             {
-                $( '#bootstrap-confirm-dialog-delete-btn' ).attr( 'data-dismiss', 'modal' );
-
                 if ( $.isFunction( plugin.settings.callback ) )
                 {
-                    var deleteBtn = $( 'a#bootstrap-confirm-dialog-delete-btn' );
-
-                    deleteBtn.on( 'click', { originalObject: $( this ) }, plugin.settings.callback );
-
-                    if ( null !== plugin.settings.delete_callback )
-                    {
-                        deleteBtn.on( 'click', { originalObject: $( this ) }, plugin.settings.delete_callback );
-                    }
+                    deleteBtn.attr( 'data-dismiss', 'modal' ).off('.bs-confirm-delete').on( 'click.bs-confirm-delete', { originalObject: $( this ) }, plugin.settings.callback );
+                    hasCallback = true;
                 }
                 else
                 {
                     console.log( plugin.settings.callback + ' is not a valid callback' );
                 }
             }
-            else if ( '' !== event.currentTarget.href )
+            if ( null !== plugin.settings.delete_callback )
             {
-                $( 'a#bootstrap-confirm-dialog-delete-btn' ).attr( 'href', event.currentTarget.href );
+                if ( $.isFunction( plugin.settings.delete_callback ) )
+                {
+                    deleteBtn.attr( 'data-dismiss', 'modal' ).off('.bs-confirm-delete').on( 'click.bs-confirm-delete', { originalObject: $( this ) }, plugin.settings.delete_callback );
+                    hasCallback = true;
+                }
+                else
+                {
+                    console.log( plugin.settings.delete_callback + ' is not a valid callback' );
+                }
+            }
+            if ( !hasCallback &&  '' !== event.currentTarget.href )
+            {
+                deleteBtn.attr( 'href', event.currentTarget.href );
             }
 
             if ( null !== plugin.settings.cancel_callback )
             {
-                $( '#bootstrap-confirm-dialog-cancel-delete-btn' ).on( 'click', { originalObject: $( this ) }, plugin.settings.cancel_callback );
+                cancelBtn.off('.bs-confirm-delete').on( 'click.bs-confirm-delete', { originalObject: $( this ) }, plugin.settings.cancel_callback );
             }
         };
     };
@@ -91,7 +99,7 @@
             var plugin = new bootstrap_confirm_delete( this, options );
 
             element.data( 'bootstrap_confirm_delete', plugin );
-            element.on( 'click', plugin.onDelete );
+            element.off('.bs-confirm-delete').on( 'click.bs-confirm-delete', plugin.onDelete );
 
             return plugin;
         } );
