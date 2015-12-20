@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-confirm-delete",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Bootstrap confirm delete modal dialog jquery plugin",
   "main": "bootstrap-confirm-dialog.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "plugin"
   ],
   "author": "Tom Kaczocha <tom@crazydev.org>",
-  "license": "GPL-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rawphp/Bootstrap-Confirm-Delete/issues"
   },
