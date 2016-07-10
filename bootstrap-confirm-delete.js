@@ -15,6 +15,8 @@
                 debug: false,
                 heading: 'Delete',
                 message: 'Are you sure you want to delete this item?',
+                btnOkLabel: 'Yes',
+                btnCancelLabel: 'Cancel',
                 data_type: null,
                 callback: null,
                 delete_callback: null,
@@ -43,6 +45,8 @@
 
             $( '#bootstrap-confirm-dialog-heading' ).html( plugin.settings.heading );
             $( '#bootstrap-confirm-dialog-text' ).html( plugin.settings.message );
+            $( '#bootstrap-confirm-dialog-delete-btn' ).html( plugin.settings.btnOkLabel );
+            $( '#bootstrap-confirm-dialog-cancel-delete-btn' ).html( plugin.settings.btnCancelLabel );
             $( '#bootstrap-confirm-dialog' ).modal( 'toggle' );
 
             var deleteBtn = $( 'a#bootstrap-confirm-dialog-delete-btn' );
