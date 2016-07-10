@@ -58,6 +58,8 @@ $( document ).ready( function( )
             debug:              false,
             heading:            'My Custom Delete Heading',
             message:            'Are you sure you want to delete this item?',
+            btn_ok_label:       'Yes',
+            btn_cancel_label:   'Cancel',
             data_type:          'post',
             callback:           function ( event )
                                 {
@@ -86,6 +88,12 @@ This is for setting a custom modal heading.
 
 ### message
 Setting a custom delete message/question.
+
+### btn_ok_label
+Set the confirm label text
+
+### btn_cancel_label:
+Set the cancel label text
 
 ### data_type
 Used if heading & message are not provided
